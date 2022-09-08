@@ -1,0 +1,17 @@
+name: No Duplication beyond 3 lines
+
+on: [push, pull_request]
+
+jobs:
+  nodups:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install jscpd
+      run: pip install jscpd
+
+    - name: Check duplications
+      run: $HOME/.local/bin/jscpd
