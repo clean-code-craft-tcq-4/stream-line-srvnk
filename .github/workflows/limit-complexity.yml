@@ -1,6 +1,10 @@
 name: Limit file size
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
@@ -13,8 +17,4 @@ jobs:
       run: pip install lizard
 
     - name: Limit complexity
-      run: $HOME/.local/bin/lizard --CCN 30
-
-    - name: Check size
-      run: |
-        $HOME/.local/bin/lizard | bash .github/workflows/lpar.sh 50
+      run: $HOME/.local/bin/lizard --CCN 3
