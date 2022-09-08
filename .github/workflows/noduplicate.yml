@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install jscpd
-      run: pip install jscpd
+      run: sudo npm install -g jscpd
 
     - name: Check duplications
-      run: $HOME/.local/bin/jscpd
+      run: jscpd . --min-lines 3 --min-tokens 48 --threshold 0
