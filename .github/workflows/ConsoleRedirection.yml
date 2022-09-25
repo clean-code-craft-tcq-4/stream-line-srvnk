@@ -36,5 +36,5 @@ jobs:
       run: dotnet build  --configuration Debug
       
     - name: Run cmd
-      run: dotnet run D:\a\stream-line-srvnk\stream-line-srvnk\SensorProcess\bin\Debug\netcoreapp3.1\SensorProcess.exe | java -ea -classpath . ReceiverProcess.Receiver
+      run: dotnet run  | java -ea -classpath . ReceiverProcess.Receiver
       shell: cmd
