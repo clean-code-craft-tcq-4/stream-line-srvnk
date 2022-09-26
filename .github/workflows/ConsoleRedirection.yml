@@ -36,5 +36,5 @@ jobs:
       run: dotnet build  --configuration Debug
       
     - name: Run cmd
-      run: dotnet run  --project SensorProcess/SensorProcess.csproj | java -ea -classpath . ReceiverProcess.Receiver
       shell: cmd
+      run: call run.bat | java -ea -classpath . ReceiverProcess.Receiver
