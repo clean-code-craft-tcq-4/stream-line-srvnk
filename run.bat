@@ -1,1 +1,1 @@
-mdotnet run -p SensorProcess
+dotnet run -p SensorProcess
