@@ -29,11 +29,18 @@ namespace SensorProcess
         }
         public void PrintParameterValues(List<BMSParameterData> bmsParameterData)
         {
-            Console.WriteLine("Temerature\t\t\t ChargeRate Values\n");
+            Console.WriteLine("Temperature (Sensor1) Data");
 
             foreach (BMSParameterData bmsParameter in bmsParameterData)
             {
-                Console.WriteLine(bmsParameter.Temperature + "\t\t\t" + bmsParameter.ChargeRate + "\n");
+                Console.WriteLine(bmsParameter.Temperature + "\n");
+            }
+
+            Console.WriteLine("State Of Charge (SOC) (Sensor2) Data");
+
+            foreach (BMSParameterData bmsParameter in bmsParameterData)
+            {
+                Console.WriteLine(bmsParameter.ChargeRate + "\n");
             }
         }
     }
