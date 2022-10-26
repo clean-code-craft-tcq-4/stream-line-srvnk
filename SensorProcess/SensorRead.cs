@@ -3,7 +3,7 @@ using System;
 namespace SensorProcess
 {
     public class SensorRead
-    {        
+    {
         public void ReadSensorData()
         {
             Random randData = new Random();
