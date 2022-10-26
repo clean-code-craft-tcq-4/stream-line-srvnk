@@ -4,7 +4,7 @@ namespace SensorProcess
 {
     public class Program
     {
-        private static void Main()
+        static void Main(string[] args)
         {
             Console.WriteLine("Temperature (Sensor1) Data");
             SensorRead sensorRead = new SensorRead();
