@@ -1,4 +1,4 @@
-name: Enter Reflections
+name: Check Completion
 
 on: [push, pull_request]
 
