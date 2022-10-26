@@ -7,7 +7,6 @@ namespace SensorProcess
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Temperature (Sensor1) Data");
             SensorProcessMethods sensorProcess = new SensorProcessMethods();
 
             List<BMSParameterData> bmsParameterData = new List<BMSParameterData>();
