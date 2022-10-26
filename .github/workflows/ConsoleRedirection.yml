@@ -37,5 +37,5 @@ jobs:
       
     - name: Run cmd
       shell: cmd
-      run:  D:\a\stream-line-srvnk-master\stream-line-srvnk-master\SensorProcess\bin\Debug\netcoreapp3.1\SensorProcess.exe | java -ea -classpath . ReceiverProcess.Receiver
+      run:  D:\a\stream-line-srvnk\stream-line-srvnk\SensorProcess\bin\Debug\netcoreapp3.1\SensorProcess.exe | java -ea -classpath . ReceiverProcess.Receiver
 
