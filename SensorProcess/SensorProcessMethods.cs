@@ -33,14 +33,14 @@ namespace SensorProcess
 
             foreach (BMSParameterData bmsParameter in bmsParameterData)
             {
-                Console.WriteLine(bmsParameter.Temperature + "\n");
+                Console.WriteLine(bmsParameter.Temperature);
             }
 
             Console.WriteLine("State Of Charge (SOC) (Sensor2) Data");
 
             foreach (BMSParameterData bmsParameter in bmsParameterData)
             {
-                Console.WriteLine(bmsParameter.ChargeRate + "\n");
+                Console.WriteLine(bmsParameter.ChargeRate);
             }
         }
     }
