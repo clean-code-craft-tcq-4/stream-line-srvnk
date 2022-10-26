@@ -7,12 +7,12 @@ namespace SensorProcess
     {
         static void Main(string[] args)
         {
-            SensorRead sensorRead = new SensorRead();
-            PrintMethod printMethod = new PrintMethod();
+            Console.WriteLine("Temperature (Sensor1) Data");
+            SensorProcessMethods sensorProcess = new SensorProcessMethods();
 
             List<BMSParameterData> bmsParameterData = new List<BMSParameterData>();
-            List<float> temperatureData = sensorRead.GenerateTemperatureData(1, 100);
-            List<float> chargeRateData = sensorRead.GenerateChargeRateData(1, 50);
+            List<float> temperatureData = sensorProcess.GenerateTemperatureData(1, 100);
+            List<float> chargeRateData = sensorProcess.GenerateChargeRateData(1, 50);
 
             for (int i=0;i<temperatureData.Count;i++)
             {
@@ -23,7 +23,7 @@ namespace SensorProcess
                 bmsParameterData.Add(bmsParameter);
             }
 
-            printMethod.PrintParameterValues(bmsParameterData);
+            sensorProcess.PrintParameterValues(bmsParameterData);
         }
     }
 }
