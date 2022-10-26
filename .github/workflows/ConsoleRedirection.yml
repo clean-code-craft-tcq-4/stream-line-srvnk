@@ -33,9 +33,9 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Build
-      run: dotnet build  --configuration Debug
+      run: dotnet build SensorProcess --configuration Debug
       
     - name: Run cmd
       shell: cmd
-      run:  D:\a\stream-line-srvnk\stream-line-srvnk\SensorProcess\SensorProcess\bin\Debug\netcoreapp3.1\SensorProcess.exe | java -ea -classpath . ReceiverProcess.Receiver
+      run:  C:\Projects\SourceCode\TCQ\stream-line-srvnk-master\stream-line-srvnk-master\SensorProcess\bin\Debug\netcoreapp3.1\SensorProcess.exe | java -ea -classpath . ReceiverProcess.Receiver
 
