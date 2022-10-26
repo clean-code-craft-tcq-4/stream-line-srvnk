@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace SensorProcess
 {
@@ -8,10 +9,22 @@ namespace SensorProcess
         {
             Console.WriteLine("Temperature (Sensor1) Data");
             SensorRead sensorRead = new SensorRead();
-            sensorRead.ReadSensorData();
+            PrintMethod printMethod = new PrintMethod();
 
-            Console.WriteLine("State Of Charge (SOC) (Sensor2) Data");
-            sensorRead.ReadSensorData();
+            List<BMSParameterData> bmsParameterData = new List<BMSParameterData>();
+            List<float> temperatureData = sensorRead.GenerateTemperatureData(1, 100);
+            List<float> chargeRateData = sensorRead.GenerateChargeRateData(1, 50);
+
+            for (int i=0;i<temperatureData.Count;i++)
+            {
+                BMSParameterData bmsParameter = new BMSParameterData();
+                bmsParameter.Temperature = temperatureData[i];
+                bmsParameter.ChargeRate = chargeRateData[i];
+
+                bmsParameterData.Add(bmsParameter);
+            }
+
+            printMethod.PrintParameterValues(bmsParameterData);
         }
     }
 }
