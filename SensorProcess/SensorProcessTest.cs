@@ -13,7 +13,7 @@ namespace SensorProcess
             List<float> sensorValues = sensorMethod.GenerateTemperatureData(1, 100);
             foreach(float sensor in sensorValues)
             {
-                Assert.IsTrue(sensor <= 100 && sensor > 0));
+                Assert.IsTrue(sensor <= 100 && sensor > 0);
             }
         }
 
@@ -23,7 +23,7 @@ namespace SensorProcess
             List<float> sensorValues = sensorMethod.GenerateChargeRateData(1, 50);
             foreach (float sensor in sensorValues)
             {
-                Assert.IsTrue(sensor <= 100 && sensor > 0));
+                Assert.IsTrue(sensor <= 100 && sensor > 0);
             }
         }
     }
