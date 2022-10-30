@@ -1,0 +1,44 @@
+name: Console Redirection
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Debug]
+
+    runs-on: windows-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    # Install and run java App
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+      
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: Build Receiver
+      run: javac ReceiverProcess/Receiver.java
+      
+    - name: Build Sensor
+      run: dotnet build SensorProcess --configuration Debug
+    - name: Run Sender
+      run: D:\a\stream-line-srvnk\stream-line-srvnk\SensorProcess\bin\Debug\netcoreapp3.1\SensorProcess.exe
+      
+    - name: Run cmd
+      shell: cmd
+      run:  D:\a\stream-line-srvnk\stream-line-srvnk\SensorProcess\bin\Debug\netcoreapp3.1\SensorProcess.exe | java -ea -classpath . ReceiverProcess.Receiver
+
