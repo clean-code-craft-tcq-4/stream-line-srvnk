@@ -30,7 +30,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Build
+    - name: Build Receiver
+      run: javac ReceiverProcess/Receiver.java
+      
+    - name: Build Sensor
       run: dotnet build SensorProcess --configuration Debug
     - name: Run Sender
       run: D:\a\stream-line-srvnk\stream-line-srvnk\SensorProcess\bin\Debug\netcoreapp3.1\SensorProcess.exe
